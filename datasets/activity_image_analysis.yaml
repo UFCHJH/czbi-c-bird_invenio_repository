@@ -1,0 +1,17 @@
+CZBIActivityImageAnalysis:
+  type: object
+  properties:
+    activity_type:
+      type: keyword
+      required: true
+    name:
+      type: fulltext+keyword
+      label: Short description
+      hint: Examples are Measurement of Area, Circularity, Mutual Distances, Speed, etc.
+      required: true
+    description:
+      type: fulltext
+      label: Description
+      hint: Detailed explanation of the executed measures
+      help: Detailed explanation can be a github URL, or the code or macro itself
+      required: true

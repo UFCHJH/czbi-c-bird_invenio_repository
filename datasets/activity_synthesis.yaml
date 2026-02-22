@@ -1,0 +1,14 @@
+CZBIActivitySynthesis:
+  type: nested
+  properties:
+    activity_type:
+      type: keyword
+      required: true
+    specimen_name:
+      type: fulltext+keyword
+      label: Specimen label
+      required: true
+    description:
+      type: fulltext
+      label: Description
+      required: true

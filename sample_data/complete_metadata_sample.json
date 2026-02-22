@@ -1,0 +1,130 @@
+{
+    "metadata": {
+        "resource_type": {
+            "id": "dataset"
+        },
+        "title": "Comprehensive Cell Biology Imaging Dataset",
+        "creators": [
+            {
+                "person_or_org": {
+                    "type": "personal",
+                    "given_name": "Jane",
+                    "family_name": "Smith",
+                    "identifiers": [
+                        {
+                            "scheme": "orcid",
+                            "identifier": "0000-0002-1825-0097"
+                        }
+                    ]
+                },
+                "affiliations": [
+                    {
+                        "id": "01ggx4157",
+                        "name": "Harvard University"
+                    }
+                ]
+            },
+            {
+                "person_or_org": {
+                    "type": "personal",
+                    "given_name": "John",
+                    "family_name": "Doe",
+                    "identifiers": [
+                        {
+                            "scheme": "orcid",
+                            "identifier": "0000-0001-8135-3489"
+                        }
+                    ]
+                },
+                "affiliations": [
+                    {
+                        "name": "MIT"
+                    }
+                ]
+            }
+        ],
+        "publication_date": "2026-02-22",
+        "description": "This dataset contains a complete workflow of cell imaging activities including synthesis, collection, sample preparation, growth protocols, image acquisition, processing, and analysis.",
+        "subjects": [
+            {
+                "id": "http://id.nlm.nih.gov/mesh/D015025",
+                "subject": "Cell Biology"
+            },
+            {
+                "id": "http://id.nlm.nih.gov/mesh/D008853",
+                "subject": "Microscopy"
+            }
+        ],
+        "rights": [
+            {
+                "id": "cc-by-4.0"
+            }
+        ],
+        "languages": [
+            {
+                "id": "eng"
+            }
+        ],
+        "version": "1.0.0",
+        "publisher": "Chan Zuckerberg Biohub",
+        "provenances": [
+            {
+                "activity_type": "activity_synthesis",
+                "specimen_name": "Synthesized HeLa cells - Batch A1",
+                "description": "Synthesis of HeLa cells using standard culture medium with 10% FBS and penicillin-streptomycin. Cells were grown to 80% confluence."
+            },
+            {
+                "activity_type": "activity_collection",
+                "specimen_name": "Collected HeLa cells from culture plate",
+                "taxon": 9606,
+                "description": "Cells were collected using trypsinization technique. After 5 minutes of incubation with 0.25% trypsin-EDTA, cells were resuspended in fresh media."
+            },
+            {
+                "activity_type": "activity_sample_preparation",
+                "sample_preparation": {
+                    "sample_preparation_desc": "published_protocol",
+                    "title": "Standard Fixation Protocol for Fluorescence Microscopy",
+                    "reference": "https://doi.org/10.1234/fixation-protocol-2025"
+                }
+            },
+            {
+                "activity_type": "activity_sample_preparation",
+                "sample_preparation": {
+                    "sample_preparation_desc": "manual_description",
+                    "title": "Custom Permeabilization Protocol",
+                    "description": "Cells were permeabilized using 0.1% Triton X-100 in PBS for 10 minutes at room temperature. Samples were then washed three times with PBS, 5 minutes each wash. This custom protocol was optimized for maintaining cell morphology while allowing antibody penetration."
+                }
+            },
+            {
+                "activity_type": "activity_growth_protocol",
+                "growth_protocol": {
+                    "growth_protocol_desc": "published_protocol",
+                    "title": "DMEM Growth Protocol for Mammalian Cells",
+                    "reference": "https://protocols.io/view/dmem-growth-standard-xyz123"
+                }
+            },
+            {
+                "activity_type": "activity_growth_protocol",
+                "growth_protocol": {
+                    "growth_protocol_desc": "manual_description",
+                    "title": "Optimized Growth Protocol for HeLa Cells",
+                    "description": "Cells were maintained in DMEM supplemented with 10% heat-inactivated FBS, 2mM L-glutamine, and 1% penicillin-streptomycin. Cultures were maintained at 37°C in a humidified atmosphere with 5% CO2. Medium was changed every 2-3 days and cells were passaged when reaching 80-90% confluence."
+                }
+            },
+            {
+                "activity_type": "activity_image_acquisition",
+                "instrument_id": 42
+            },
+            {
+                "activity_type": "activity_image_processing",
+                "name": "Deconvolution and Background Subtraction",
+                "description": "Images were deconvolved using Richardson-Lucy algorithm with 10 iterations. Background was subtracted using rolling ball algorithm with radius 50 pixels. Processing script available at: https://github.com/example/imaging-pipeline/blob/main/deconvolution.py"
+            },
+            {
+                "activity_type": "activity_image_analysis",
+                "name": "Cell Area and Circularity Measurement",
+                "description": "Automated segmentation was performed using Otsu thresholding followed by watershed algorithm. For each segmented cell, area (in μm²) and circularity (4π*area/perimeter²) were measured. Analysis macro available at: https://github.com/example/imaging-pipeline/blob/main/measure_cells.ijm"
+            }
+        ]
+    }
+}

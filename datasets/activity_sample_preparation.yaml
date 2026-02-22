@@ -1,0 +1,38 @@
+CZBIActivitySamplePreparation:
+  type: object
+  properties:
+    activity_type:
+      type: keyword
+      required: true
+    sample_preparation:
+      type: polymorphic
+      discriminator: sample_preparation_desc
+      oneof:
+        - discriminator: published_protocol
+          type: nested
+          properties:
+            sample_preparation_desc:
+              type: keyword
+              required: true
+            title:
+              type: fulltext+keyword
+              label: Protocol title
+            reference:
+              type: keyword
+              label: Protocol URL
+              hint: URL or PID at which the protocol can be found
+              required: true
+        - discriminator: manual_description
+          type: object
+          properties:
+            sample_preparation_desc:
+              type: keyword
+              required: true
+            title:
+              type: fulltext+keyword
+              label: Protocol title
+              required: true
+            description:
+              type: fulltext
+              label: Protocol description
+              required: true

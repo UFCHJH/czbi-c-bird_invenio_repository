@@ -1,0 +1,17 @@
+CZBIActivityCollection:
+  type: nested
+  properties:
+    activity_type:
+      type: keyword
+      required: true
+    specimen_name:
+      type: fulltext+keyword
+      label: Specimen label
+      required: true
+    taxon:
+      type: int
+      hint: ID from some ontology (for now)
+    description:
+      type: fulltext
+      label: Description
+      required: true
