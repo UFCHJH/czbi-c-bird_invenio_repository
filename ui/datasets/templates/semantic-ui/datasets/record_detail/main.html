@@ -65,3 +65,115 @@ Note: Context variables available:
   </h1>
 </section>
 {%- endblock record_title -%}
+
+{%- block record_content %}
+  {{super()}}
+
+  {%- if m.provenances %}
+    <h2 class="ui dividing header">Provenances</h2>
+    {%- for provenance in as_array(m.provenances) %}
+      <h3 class="ui header">{{ ui_value(provenance.activity_type)|replace('_', ' ')|title }}</h3>
+      <table class="ui definition table">
+        {%- if value(provenance.activity_type) == 'activity_synthesis' %}
+          <tr>
+            <td>Specimen Name</td>
+            <td>{{ui_value(provenance.specimen_name)}}</td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>{{ui_value(provenance.description)}}</td>
+          </tr>
+        {%- elif value(provenance.activity_type) == 'activity_collection' %}
+          <tr>
+            <td>Specimen Name</td>
+            <td>{{ui_value(provenance.specimen_name)}}</td>
+          </tr>
+          {%- if value(provenance.taxon) %}
+          <tr>
+            <td>Taxon ID</td>
+            <td>{{ui_value(provenance.taxon)}}</td>
+          </tr>
+          {%- endif %}
+          <tr>
+            <td>Description</td>
+            <td>{{ui_value(provenance.description)}}</td>
+          </tr>
+        {%- elif value(provenance.activity_type) == 'activity_sample_preparation' %}
+          {%- if value(provenance.sample_preparation) %}
+            <tr>
+              <td>Preparation Type</td>
+              <td>{{ui_value(provenance.sample_preparation.sample_preparation_desc)|replace('_', ' ')|title}}</td>
+            </tr>
+            {%- if value(provenance.sample_preparation.title) %}
+            <tr>
+              <td>Title</td>
+              <td>{{ui_value(provenance.sample_preparation.title)}}</td>
+            </tr>
+            {%- endif %}
+            {%- if value(provenance.sample_preparation.reference) %}
+            <tr>
+              <td>Reference</td>
+              <td><a href="{{ui_value(provenance.sample_preparation.reference)}}" target="_blank">{{ui_value(provenance.sample_preparation.reference)}}</a></td>
+            </tr>
+            {%- endif %}
+            {%- if value(provenance.sample_preparation.description) %}
+            <tr>
+              <td>Description</td>
+              <td>{{ui_value(provenance.sample_preparation.description)}}</td>
+            </tr>
+            {%- endif %}
+          {%- endif %}
+        {%- elif value(provenance.activity_type) == 'activity_growth_protocol' %}
+          {%- if value(provenance.growth_protocol) %}
+            <tr>
+              <td>Protocol Type</td>
+              <td>{{ui_value(provenance.growth_protocol.growth_protocol_desc)|replace('_', ' ')|title}}</td>
+            </tr>
+            {%- if value(provenance.growth_protocol.title) %}
+            <tr>
+              <td>Title</td>
+              <td>{{ui_value(provenance.growth_protocol.title)}}</td>
+            </tr>
+            {%- endif %}
+            {%- if value(provenance.growth_protocol.reference) %}
+            <tr>
+              <td>Reference</td>
+              <td><a href="{{ui_value(provenance.growth_protocol.reference)}}" target="_blank">{{ui_value(provenance.growth_protocol.reference)}}</a></td>
+            </tr>
+            {%- endif %}
+            {%- if value(provenance.growth_protocol.description) %}
+            <tr>
+              <td>Description</td>
+              <td>{{ui_value(provenance.growth_protocol.description)}}</td>
+            </tr>
+            {%- endif %}
+          {%- endif %}
+        {%- elif value(provenance.activity_type) == 'activity_image_acquisition' %}
+          <tr>
+            <td>Instrument ID</td>
+            <td>{{ui_value(provenance.instrument_id)}}</td>
+          </tr>
+        {%- elif value(provenance.activity_type) == 'activity_image_processing' %}
+          <tr>
+            <td>Name</td>
+            <td>{{ui_value(provenance.name)}}</td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>{{ui_value(provenance.description)}}</td>
+          </tr>
+        {%- elif value(provenance.activity_type) == 'activity_image_analysis' %}
+          <tr>
+            <td>Name</td>
+            <td>{{ui_value(provenance.name)}}</td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>{{ui_value(provenance.description)}}</td>
+          </tr>
+        {%- endif %}
+      </table>
+    {%- endfor %}
+  {%- endif %}
+  
+{%- endblock record_content %}
