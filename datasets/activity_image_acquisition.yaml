@@ -3,9 +3,9 @@ CZBIActivityImageAcquisition:
   properties:
     activity_type:
       type: keyword
-      required: true
+      required: false
     instrument_id:
       type: int
       label: Device
       hint: ID from a list of available microscopes (for now)
-      required: true
+      required: false

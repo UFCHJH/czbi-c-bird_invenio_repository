@@ -3,15 +3,15 @@ CZBIActivityCollection:
   properties:
     activity_type:
       type: keyword
-      required: true
+      required: false
     specimen_name:
       type: fulltext+keyword
       label: Specimen label
-      required: true
+      required: false
     taxon:
       type: int
       hint: ID from some ontology (for now)
     description:
       type: fulltext
       label: Description
-      required: true
+      required: false

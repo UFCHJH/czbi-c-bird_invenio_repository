@@ -69,6 +69,10 @@ Note: Context variables available:
 {%- block record_content %}
   {{super()}}
 
+  <div id="record-detail-root-container" data-metadata='{{ m.__dict__ | tojson }}'></div>
+
+  {{webpack['datasets_record_detail.js']}}
+
   {%- if m.provenances %}
     <h2 class="ui dividing header">Provenances</h2>
     {%- for provenance in as_array(m.provenances) %}

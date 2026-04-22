@@ -1,23 +1,100 @@
 Metadata:
   properties:
-    provenances:
+    specimen:
+      type: Specimen
+    sample_preparation:
+      type: SimpleSamplePreparation
+#    sample_preparation:
+#      type: array
+#      items:
+#        type: SimpleSamplePreparation
+    image_acquisition:
+      type: SimpleImageAcquisition
+
+
+Specimen:
+  type: object
+  properties:
+    taxon:
+      type: fulltext
+      required: false
+    biological_entity:
+      type: fulltext
+      required: false
+    collection_date:
+      type: fulltext
+      required: false
+    collection_place:
+      type: fulltext
+      required: false
+    additional_info:
+      type: fulltext
+      label: Furher description
+      hint: The place for additional specific description
+
+
+SimpleSamplePreparation:
+  type: nested
+  properties:
+    protocol_name:
+      type: fulltext
+      label: Protocol name
+      required: false
+    protocol_type:
+      # Obecny typ/charakter relevantni prace se vzorkem, jako napriklad dodatecna biologicka/chemicka manipulace (napr. barveni, vymyvani barev, odstredovani, zahrivani, smichavani s cinidly atp.) nebo fyzikalni (orezavani, fixace atp.). Trochu si prejeme, aby diky teto kategorizaci cinnosti byl vedec nucen se rozepsat pres vice "dilcich pribehu". Muze potom snadno tyto "bloby" recyklovat pri vytvareni sister-recordu: Predstavme si kontrolni a experimentalni datovou sadu -- tyto vznikaji do znacne miry spolecne ze stejneho typu specimenu, ale s vyjimkou nejakeho "disturbance" specialniho kroku v priprave u experimentalni sady.
+      #
+      # Hodnota bude z ontologie/slovniku.
+      #
+      # Hrozi, ze casem bude nejprve vyber slovniku a hodnota potom bude z vybraneho slovniku (nyni ale v modelu neni atribut na ulozeni zvoleneho slovniku, ze ktereho hodnota prisla).
+      type: keyword
+      label: Protocol type
+      hint: Single-choice Dropbox ze seznamu od Vlada (TBA)
+      required: false
+    identifiers:
+      type: dynamic-object
+      label: Identifiers
+      required: false
+    additional_info:
+      # Pokud se vedec rozhodne, a my bychom to tak radi videli, znovu-pouzivat sve "bloby" z 'description', ma zde moznost uvest pripadne mirne odchylky. Da se to chapat i tak, ze celkovy popis tohoto "pribehu" je logicky rozlozeny pres dva useky, tzn. pres 'description' + 'additional_info', kde 'description' je urcity spolecny, re-usable blob popisu.
+      #
+      # Hodnota neni obsahove nejak omezena, neni od nikud vybirana a popis bude spise dlouhy, klidne i maly pocet stran textu (pokud se vedec rozhodne delat velkou granularitu).
+      type: fulltext
+      label: Furher description
+      hint: The place for additional specific description
+
+SimpleImageAcquisition:
+  type: object
+  properties:
+    method_type:
+      type: keyword
+      required: false
+    identifiers:
+      type: dynamic-object
+      label: Identifiers
+      required: false
+    tools:
       type: array
       items:
-        type: polymorphic
-        discriminator: activity_type
-        oneof:
-          - discriminator: activity_synthesis
-            type: CZBIActivitySynthesis
-          - discriminator: activity_collection
-            type: CZBIActivityCollection
-          - discriminator: activity_sample_preparation
-            type: CZBIActivitySamplePreparation
-          - discriminator: activity_growth_protocol
-            type: CZBIActivityGrowthProtocol
-          - discriminator: activity_image_acquisition
-            type: CZBIActivityImageAcquisition
-          - discriminator: activity_image_processing
-            type: CZBIActivityImageProcessing
-          - discriminator: activity_image_analysis
-            type: CZBIActivityImageAnalysis
-      min_items: 1
+        type: SimpleTool
+    additional_info:
+      type: fulltext
+      label: Furher description
+      hint: The place for additional specific description
+
+SimpleTool:
+  type: object
+  properties:
+    tool_type:
+      type: keyword
+      required: false
+    identifiers:
+      type: dynamic-object
+      label: Identifiers
+      required: false
+    manufacturer:
+      type: fulltext
+      label: Manufacturer
+    additional_info:
+      type: fulltext
+      label: Furher description
+      hint: The place for additional specific description

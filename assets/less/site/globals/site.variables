@@ -6,7 +6,7 @@
     Brand Colors
 --------------------*/
 
-@livelyGreen: #008691;
+@livelyGreen: #007043;
 @pink: #ff5b7f;
 
 @primaryColor: @livelyGreen;
@@ -16,6 +16,7 @@
 @black: #040305;
 @white: #ffffff;
 
+@lightLivelyGreen: lighten(@primaryColor, 10);
 @lightPrimaryColor: lighten(@primaryColor, 50);
 @lightSecondaryColor: lighten(@primaryColor, 50);
 @primaryDarkenColor: @darkGrey;
@@ -51,7 +52,7 @@
 @footerTextLightColor: #ffffff;
 @footerTextDarkColor: #ffffff;
 
-@navbar_background_image: linear-gradient(165deg, #008691, #008691, #00848e, #007e88, #00737d, #006971, #00636b, #006169, #006169);
+@navbar_background_image: linear-gradient(165deg, @livelyGreen, @lightLivelyGreen);
 @navbar_background_color: @brandColor;
 
 @coverPageBackgroundColor: @livelyGreen;

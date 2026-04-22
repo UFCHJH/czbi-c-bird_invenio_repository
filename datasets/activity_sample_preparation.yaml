@@ -3,7 +3,7 @@ CZBIActivitySamplePreparation:
   properties:
     activity_type:
       type: keyword
-      required: true
+      required: false
     sample_preparation:
       type: polymorphic
       discriminator: sample_preparation_desc
@@ -13,7 +13,7 @@ CZBIActivitySamplePreparation:
           properties:
             sample_preparation_desc:
               type: keyword
-              required: true
+              required: false
             title:
               type: fulltext+keyword
               label: Protocol title
@@ -21,18 +21,18 @@ CZBIActivitySamplePreparation:
               type: keyword
               label: Protocol URL
               hint: URL or PID at which the protocol can be found
-              required: true
+              required: false
         - discriminator: manual_description
           type: object
           properties:
             sample_preparation_desc:
               type: keyword
-              required: true
+              required: false
             title:
               type: fulltext+keyword
               label: Protocol title
-              required: true
+              required: false
             description:
               type: fulltext
               label: Protocol description
-              required: true
+              required: false

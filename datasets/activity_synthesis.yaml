@@ -3,12 +3,12 @@ CZBIActivitySynthesis:
   properties:
     activity_type:
       type: keyword
-      required: true
+      required: false
     specimen_name:
       type: fulltext+keyword
       label: Specimen label
-      required: true
+      required: false
     description:
       type: fulltext
       label: Description
-      required: true
+      required: false

@@ -9,10 +9,14 @@ theme = WebpackThemeBundle(
             entry={
                 "datasets_search": "./js/datasets/search/index.js",
                 "datasets_deposit_form": "./js/datasets/forms/index.js",
+                "datasets_record_detail": "./js/datasets/details/index.js"
             },
-            dependencies={},
+            dependencies={
+                "@ufchjh/czbi-ui_lib": "0.1.0"
+            },
             devDependencies={},
             aliases={
+                "@oarepo/ui-theme": "./js/oarepo_ui/forms/index.js",
                 "@js/datasets": "./js/datasets"
             },
         )
