@@ -12,7 +12,7 @@ theme = WebpackThemeBundle(
                 "datasets_record_detail": "./js/datasets/details/index.js"
             },
             dependencies={
-                "@ufchjh/czbi-ui_lib": "0.1.0"
+                "@thekarinka/czbi-ui_lib": "0.1.0"
             },
             devDependencies={},
             aliases={

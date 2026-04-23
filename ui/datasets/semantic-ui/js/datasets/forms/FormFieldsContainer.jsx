@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Specimen, ImageAcquisition, SamplePreparation } from "@ufchjh/czbi-ui_lib";
+import { Specimen, ImageAcquisition, SamplePreparation } from "@thekarinka/czbi-ui_lib";
 
 import {
   useFormConfig,
