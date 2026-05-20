@@ -73,3 +73,10 @@ OPENIDC_SECRET=''
 INVENIO_DOI_DATACITE_PREFIX="unknown"
 INVENIO_DOI_DATACITE_PASSWORD="unknown"
 INVENIO_DOI_DATACITE_USERNAME="unknown"
+
+# -------------------------
+# empty for local development
+INVENIO_REMOTE_AUTH_ENABLED="no"
+INVENIO_EINFRA_CONSUMER_KEY=""
+INVENIO_EINFRA_CONSUMER_SECRET=""
+# -------------------------
