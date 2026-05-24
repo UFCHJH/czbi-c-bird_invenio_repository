@@ -13,7 +13,7 @@ from oarepo_model.presets.drafts import drafts_preset
 from oarepo_model.presets.records_resources import records_resources_preset
 from oarepo_model.presets.ui_links import ui_links_preset
 from oarepo_model.datatypes.registry import from_yaml
-from oarepo_rdm.model.presets import rdm_complete_preset
+from ccmm_invenio.models import ccmm_production_preset_1_1_0
 
 from .serializers import DataCiteJSONSerializer
 
@@ -31,7 +31,7 @@ datasets_model = model(
     description="High-level datasets\n",
     presets=[
 
-        rdm_complete_preset
+        ccmm_production_preset_1_1_0
 
     ],
     types=[
