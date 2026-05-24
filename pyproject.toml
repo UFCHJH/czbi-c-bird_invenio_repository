@@ -7,18 +7,9 @@ authors = []
 dependencies = [
     "oarepo[s3,rdm]>=14.2.1b10.dev6,<15.0.0",
     "oarepo-app[production]==2.3.0",
-#   "oarepo-runtime>=2.0.0dev59,<3.0.0",
-#    "oarepo-model>=0.1.0dev53,<1.0.0",
     "json5",
-#    "oarepo[s3,rdm]>=14.0.0,<=14.2.0",
-#    "oarepo-ui>=6.0.0dev0,<7.0.0",
-#    "oarepo-rdm>=1.0.0dev46,<2.0.0",
-#    "oarepo-theme>=1.0.0dev7,<2.0.0",
-#    "oarepo-dashboard>=2.0.0dev4,<3.0.0",
-#    "oarepo-oidc-einfra>=2.0.0dev4,<3.0.0",
     "python-dotenv",
     "marshmallow-i18n-messages",
-#    "oarepo-glitchtip==1.*",
 ]
 requires-python = ">=3.14,<3.15"
 
@@ -45,7 +36,7 @@ module-name = [
     "common",
     "i18n",
     "ui",
-    "datasets",
+    "models",
 ]
 
 [build-system]

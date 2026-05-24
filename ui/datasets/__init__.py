@@ -18,6 +18,10 @@ from invenio_i18n import lazy_gettext as _
 from oarepo_ui.overrides import UIComponent
 from oarepo_ui.overrides.components import UIComponentImportMode
 from oarepo_ui.proxies import current_oarepo_ui
+from oarepo_rdm.ui.components import (
+    CommunitiesMembershipsComponent,
+    RDMVocabularyOptionsComponent,
+)
 
 class DatasetsUIResourceConfig(RecordsUIResourceConfig):
     template_folder = "templates"
@@ -43,14 +47,17 @@ class DatasetsUIResourceConfig(RecordsUIResourceConfig):
         FilesLockedComponent,
         FilesQuotaAndTransferComponent,
     ]
-    
+
     try:
-        from oarepo_vocabularies.ui.resources.components import (
-            DepositVocabularyOptionsComponent,
+        from oarepo_rdm.ui.components import (
+            CommunitiesMembershipsComponent,
+            RDMVocabularyOptionsComponent
         )
-        components.append(DepositVocabularyOptionsComponent)
+        components.append(RDMVocabularyOptionsComponent)
+        components.append(CommunitiesMembershipsComponent)
     except ImportError:
         pass
+    
 
     application_id = "datasets"
 
