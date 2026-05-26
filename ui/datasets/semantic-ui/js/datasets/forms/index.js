@@ -7,6 +7,8 @@ import {
   CCMMDepositRecordSerializer,
   CCMMSections,
 } from "@js/ccmm_invenio/forms";
+import { ImageAcquisitionSection, SamplePreparationSection, SpecimenSection } from "./CBirdSections";
+
 
 const { rootEl, config, ...rest } = parseFormAppConfig();
 const recordSerializer = new CCMMDepositRecordSerializer(
@@ -25,6 +27,9 @@ export const componentOverrides = {
 
 const sections = [
   ...CCMMSections,
+  ImageAcquisitionSection,
+  SamplePreparationSection,
+  SpecimenSection,
 ]
 
 ReactDOM.render(
