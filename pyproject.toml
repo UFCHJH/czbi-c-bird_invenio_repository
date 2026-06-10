@@ -6,7 +6,7 @@ packages = []
 authors = []
 dependencies = [
     "oarepo[s3,rdm]>=14.2.1b10.dev6,<15.0.0",
-    "oarepo-app[production]==2.3.0",
+    "oarepo-app[production,ccmm]==4.0.0",
     "json5",
     "python-dotenv",
     "marshmallow-i18n-messages",

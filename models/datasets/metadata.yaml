@@ -1,14 +1,18 @@
 Metadata:
   properties:
     specimen:
-      type: Specimen
+      type: array
+      items:
+        type: Specimen
     sample_preparation:
+      type: array
+      items:
+        type:
       type: SimpleSamplePreparation
-#    sample_preparation:
-#      type: array
-#      items:
-#        type: SimpleSamplePreparation
     image_acquisition:
+      type: array
+      items:
+        type:
       type: SimpleImageAcquisition
 
 
