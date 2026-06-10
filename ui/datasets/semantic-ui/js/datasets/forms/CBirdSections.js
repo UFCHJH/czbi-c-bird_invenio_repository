@@ -1,15 +1,15 @@
 import React from "react";
 import { i18next } from "@translations/i18next";
-import { Specimen, ImageAcquisition, SamplePreparation } from "@thekarinka/czbi-ui_lib";
+import { SpecimenArrayField, ImageAcquisitionArrayField, SamplePreparationArrayField } from "@thekarinka/czbi-ui_lib";
  
+
 export const SpecimenSection = {
   key: "specimen",
   label: i18next.t("Specimen"),
-  component: ({ record, formConfig }) => {
+  component: () => {
     return (
       <div>
-        {/* specimen pole podle UI */}
-        <Specimen fieldPath="metadata.specimen"></Specimen>
+        <SpecimenArrayField fieldPath="metadata.specimen" />
       </div>
     );
   },
@@ -18,12 +18,12 @@ export const SpecimenSection = {
 
 export const SamplePreparationSection = {
   key: "sample_preparation",
-  label: i18next.t("SamplePreparation"),
-  component: ({ record, formConfig }) => {
+  label: i18next.t("Sample Preparation"),
+  component: () => {
     return (
       <div>
         {/* sample preparation pole podle UI a Vládi */}
-        <SamplePreparation fieldPath="metadata.sample_preparation"></SamplePreparation>
+        <SamplePreparationArrayField fieldPath="metadata.sample_preparation" />
       </div>
     );
   },
@@ -32,12 +32,12 @@ export const SamplePreparationSection = {
 
 export const ImageAcquisitionSection = {
   key: "image_acquisition",
-  label: i18next.t("ImageAcquisition"),
-  component: ({ record, formConfig }) => {
+  label: i18next.t("Image Acquisition"),
+  component: () => {
     return (
       <div>
         {/* image acquisition pole podle UI */}
-        <ImageAcquisition fieldPath="metadata.image_acquisition"></ImageAcquisition>
+        <ImageAcquisitionArrayField fieldPath="metadata.image_acquisition" />
       </div>
     );
   },
