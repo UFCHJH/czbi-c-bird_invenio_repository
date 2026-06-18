@@ -10,6 +10,7 @@ dependencies = [
     "json5",
     "python-dotenv",
     "marshmallow-i18n-messages",
+    "jinjax==0.60",
 ]
 requires-python = ">=3.14,<3.15"
 
