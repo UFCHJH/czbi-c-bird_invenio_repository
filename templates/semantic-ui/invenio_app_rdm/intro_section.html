@@ -1,7 +1,7 @@
 <section class="light-bg rel-pt-3 rel-pb-3">
   {{ records }}
 
-  
+  {%- if config.ACCOUNTS and current_user.is_authenticated %}
   <div class="ui centered container rel-mt-2">
     <a
       class="ui primary big labeled icon button"
@@ -11,6 +11,7 @@
       Start New Submission
     </a>
   </div>
+  {% endif %}
   
   <h2 class="section-title">
     <span><sup className="text-5xl align-super">c</sup>BIRD</span>
