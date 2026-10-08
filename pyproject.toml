@@ -10,6 +10,7 @@ dependencies = [
     "json5",
     "python-dotenv",
     "marshmallow-i18n-messages",
+    "invenio-vocabularies[s3fs]",
 ]
 requires-python = ">=3.14,<3.15"
 
