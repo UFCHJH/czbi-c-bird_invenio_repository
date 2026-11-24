@@ -1,6 +1,6 @@
 import React from "react";
 import { i18next } from "@translations/i18next";
-import { SpecimenArrayField, ImageAcquisitionArrayField, SamplePreparationArrayField } from "@thekarinka/czbi-ui_lib";
+import { SpecimenArrayField, ImageAcquisitionArrayField, SamplePreparationArrayField } from "@ufchjh/czbi-ui_lib";
  
 
 export const SpecimenSection = {

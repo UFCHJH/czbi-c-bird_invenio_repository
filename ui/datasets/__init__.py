@@ -10,8 +10,8 @@ from oarepo_ui.resources.components import (
     PermissionsComponent,
 )
 from oarepo_ui.resources.components.custom_fields import CustomFieldsComponent
-from oarepo_ui.resources.records.config import RecordsUIResourceConfig
-from oarepo_ui.resources.records.resource import RecordsUIResource
+from ccmm_invenio.ui.config import CCMMRecordsUIResourceConfig
+from ccmm_invenio.ui.resource import CCMMRecordsUIResource
 from oarepo_ui.utils import can_view_deposit_page
 from flask_menu import current_menu
 from invenio_i18n import lazy_gettext as _
@@ -23,7 +23,7 @@ from oarepo_rdm.ui.components import (
     RDMVocabularyOptionsComponent,
 )
 
-class DatasetsUIResourceConfig(RecordsUIResourceConfig):
+class DatasetsUIResourceConfig(CCMMRecordsUIResourceConfig):
     template_folder = "templates"
     url_prefix = "/datasets"
     blueprint_name = "datasets_ui"
@@ -62,7 +62,7 @@ class DatasetsUIResourceConfig(RecordsUIResourceConfig):
     application_id = "datasets"
 
 
-class DatasetsUIResource(RecordsUIResource):
+class DatasetsUIResource(CCMMRecordsUIResource):
     pass
 
 def ui_overrides(app):

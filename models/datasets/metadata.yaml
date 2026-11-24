@@ -7,18 +7,27 @@ Metadata:
     sample_preparation:
       type: array
       items:
-        type:
-      type: SimpleSamplePreparation
+        type: SimpleSamplePreparation
     image_acquisition:
       type: array
       items:
-        type:
-      type: SimpleImageAcquisition
+        type: SimpleImageAcquisition
 
+IdentifiersObject:
+  type: object
+  properties:
+    identifier_type:
+      type: fulltext
+      required: false
+    identifier_value:
+      type: fulltext
+      required: false
 
 Specimen:
   type: object
   properties:
+    activity_type:
+      type: keyword
     taxon:
       type: fulltext
       required: false
@@ -55,7 +64,7 @@ SimpleSamplePreparation:
       hint: Single-choice Dropbox ze seznamu od Vlada (TBA)
       required: false
     identifiers:
-      type: dynamic-object
+      type: IdentifiersObject
       label: Identifiers
       required: false
     additional_info:
@@ -73,7 +82,7 @@ SimpleImageAcquisition:
       type: keyword
       required: false
     identifiers:
-      type: dynamic-object
+      type: IdentifiersObject
       label: Identifiers
       required: false
     tools:
@@ -92,7 +101,9 @@ SimpleTool:
       type: keyword
       required: false
     identifiers:
-      type: dynamic-object
+      type: array
+      items:
+        type: IdentifiersObject
       label: Identifiers
       required: false
     manufacturer:
